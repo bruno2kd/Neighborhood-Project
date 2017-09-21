@@ -308,7 +308,6 @@ var koViewModel = function() {
 	};
 	// Create a "highlighted location" marker color for when the user
 	// mouses over the marker.
-	// var highlightedIcon = makeMarkerIcon('f0560b');
 	var highlightedIcon = {
 		url: 'images/food-icon-2.png',
 		scaledSize: new google.maps.Size(30, 30)
@@ -347,7 +346,6 @@ var koViewModel = function() {
 						self.allFSTips.push(article);
 						document.getElementById("user-pic").innerHTML = ("<img src='"+article.user.photo.prefix+"50x50"+article.user.photo.suffix+"'>");
 					});
-					//var attribution = document.getElementById("attribution").innerHTML = ('One tip example: ' +articleList);
 				}, //end success function
 				error: function(response) {
 					console.log("API didn't load");
