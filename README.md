@@ -17,11 +17,11 @@ Click the marker and you will see when the restaurants are open
 
 ### HOW TO RUN
 Download the files and open the index.html file OR
-Click on this link: 
+Click on this link: https://bruno2kd.github.io/Neighborhood-Project/
 
 
 ### PROBLEMS
 I tried to put the pictures of the Foursquare users who contributed with the tips but couldn't do it. Just managed to add the picture of the first contributed for each restaurant. If you know how to help me with this issue please contribute to the project.
 
 ### Credit
-I didn't know how to start the project so part of the work was inspired on the project of Juan Carlos, who posted the github on Udacity Discussion Forum "https://github.com/juancarlucci/map
+I didn't know how to start the project so part of the work was inspired on the project of Juan Carlos, who posted the github on Udacity Discussion Forum "https://github.com/juancarlucci/map"
