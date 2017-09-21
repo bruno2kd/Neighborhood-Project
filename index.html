@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>Neighborhood Map Project</title>
+        <link href="style.css" rel="stylesheet">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,200" rel="stylesheet">
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Start wrapping the sidebar -->
+            <div id="sidebar-wrapper">
+                <div>
+                    <div class="btn btn-default" id="toggleList" onclick="toggleSidebar()"><img src="images/menu-icon.png" height="30" width="30"></div>
+                </div>
+                <div class="list">
+                    <div class="search">
+                        <div id="circularTitle" onclick="refresh()">
+                            <h1 class="topTitle">Le Restaranté Map</h1>
+                            <p class="title">Cheap Restauranté</p>
+                        </div>
+                    </div>
+                    <div class="places">
+                        <ul id="list-view" data-bind="foreach: visiblePlaces">
+                            <li id="restaurant" data-bind="text: locName, click: listViewClick"></li>
+                        </ul>
+                        <input type="search" placeholder="Search restaurants" data-bind="textInput: userInput, event: {keyup: filterMarkers}">
+                    </div>
+                    <div class="FSArticlesList">
+                        <h2 class="FS-header" id="FSTitle" data-bind='text: allFSTitles'></h2>
+                        <br>
+                        <div id="FS-tips" data-bind="foreach: allFSTips">
+                            <div class="user">
+                                <div id="user-pic"></div>
+                                <p id='first-name'><span data-bind="text: user.firstName"> </p>
+                                <p id='last-name'><span data-bind="text: user.lastName"/></span>:</p>
+                            </div>
+                            <p id='tip-item' data-bind="text: text"></li>
+                        </div>
+                        <hr>
+                        <p id='attribution'></p>
+                    </div>
+                </div>
+                <!-- end "list" -->
+                
+            </div>
+            <!-- end sidebar-->
+            <!--map container -->
+            <div id="page_content_wrapper">
+                <div class="map" id="map">
+                    <div id=errorDiv></div>
+                </div>
+            </div>
+            <!-- Scripts-->
+            <script src="js/script.js"></script>
+                  <!-- sweetAlert -->
+            <script src="js/sweetalert.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+            <!-- Knockout request -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+            <!-- Map request 
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNT2upswFbNordLZka3EJr5jE9z7QtwQE&libraries=places,geometry,drawing&v=3.26&callback=mapInit" onerror="googleError()"></script>-->
+            
+            <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyBNT2upswFbNordLZka3EJr5jE9z7QtwQE&v=3&callback=initMap">
+            </script>
+
+            <!-- knockout-->
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js">
+                </script> -->
+        </div>
+    </body>
+</html>

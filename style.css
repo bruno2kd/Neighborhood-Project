@@ -1,0 +1,289 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#list-view {
+	font-family: 'Roboto', sans-serif;
+	color: #525454;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#circularTitle {
+	color: #fff;
+	border-radius: 5px;
+	width: 200px;
+	height: 200px;
+	background-color: #2B796F;
+	text-align: center;
+	margin: 20px;
+	cursor: pointer;
+}
+
+#circularTitle h1,
+h2 {
+	padding: 55px 0px 0px 0px;
+}
+
+.title {
+	font-size: 14px;
+}
+
+.places {
+	width: 100%;
+}
+
+#toggleList {
+	margin: 0;
+	height: 30px;
+	width: 250px;
+	padding: 0;
+	text-align: center;
+	visibility: visible;
+	cursor: pointer;
+	text-align: left;
+}
+
+#toggleList:hover,
+input:hover {
+	border-color: #2B796F;
+}
+
+#errorDiv {
+	margin-left: 25%;
+	text-align: center;
+	z-index: 10000;
+}
+
+input {
+	left: 20px;
+	top: 10%;
+	width: 100%;
+	font-size: .75em;
+	text-align: center;
+	border-color: #2B796F;
+}
+
+.list {
+	width: 100%;
+}
+
+#list-view {
+	top: 10px;
+	width: 100%;
+	margin: 0;
+	padding: 10px;
+}
+
+.FSArticlesList {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.butterArticlesList {
+	margin: 10px;
+}
+
+#fs-tips {
+	padding: 2px;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+#tip-item {
+	line-height: 1.2;
+	font-size: 12px;
+	text-align: justify;
+	padding: 5px; 
+}
+
+.user {
+	text-align: left;
+}
+
+#first-name {
+	line-height: 1.2;
+	display: inline;
+	font-size: 12px;
+	text-align: left;
+	font-weight: bold;
+}
+
+#last-name {
+	line-height: 1.2;
+	display: inline;
+	font-size: 12px;
+	text-align: left;
+	font-weight: bold;
+}
+
+#attribution {
+	margin-top: 0px;
+	padding: 10px;
+	font-size: 11px;
+	color: #2B796F;
+}
+
+.FS-header {
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-size: 30px;
+	margin: 0 0 10px 0;
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+}
+
+h2 {
+	padding: 10px;
+}
+
+li {
+	margin: 1px;
+	margin-left: 0px;
+	font-family: 'Poiret One',
+ 	padding:20px;
+	font: 12px;
+	list-style-type: none;
+	text-align: center;
+	margin: 10px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(82, 82, 82, 0), rgba(82, 82, 82, 0.75), rgba(82, 82, 82, 0));
+}
+
+li:last-child,
+li:first-child {
+	border-bottom: : none;
+	background-image: none;
+}
+
+#restaurant {
+	border: 0.5px solid #fff;
+	background-color: #2B796F;
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	line-height: 30px;
+	height: 30px;
+	cursor: pointer;
+	border-color: 50px;
+	border-radius: 5px;
+}
+
+#restaurant:hover {
+	background-color: #0f8e7d;
+}
+
+#map {
+	bottom: 0px;
+	height: 100%;
+	width: 100%;
+	left: 0px;
+	position: fixed !important;
+	right: 0px;
+  /*z-index: 100;*/;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 300px) {
+}
+
+#wrapper {
+	display: table-row;
+	padding-left: 0;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	background: 000;
+}
+
+#sidebar-wrapper,
+#sidebar-wrapper2 {
+	display: table-cell;
+	position: absolute;
+	z-index: 1000;
+	left: 250px;
+	width: 250px;
+	height: auto;
+	margin-left: -250px;
+	overflow-y: auto;
+	background: rgba(255, 255, 255, 0.79);
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+#page-content-wrapper {
+	display: table-cell;
+	width: 100%;
+    /*position: relative;*/
+	padding: 15px;
+}
+
+.sidebar-nav {
+    /*position: absolute;*/
+	top: 0;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#markerLayer img {
+	animation: pulse .5s infinite alternate;
+	-webkit-animation: pulse .5s infinite alternate;
+	transform-origin: center;
+	-webkit-transform-origin: center;
+}
+
+#marker:hover {
+	background-color: #2B796F;
+}
+
+.info-windows {
+	font-family: 'Roboto', sans-serif;
+	max-width: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.info-windows img {
+	padding: 10px;
+	margin: 0px;
+	font-size: 0.2em;
+}
+
+
+@media(max-width:768px) {
+	#wrapper {
+		padding-left: 150px;
+	}
+
+	#sidebar-wrapper {
+		width: 250px;
+	}
+
+	#wrapper.toggled #sidebar-wrapper {
+		width: 0;
+	}
+
+	#toggleList {
+		position: fixed;
+      /*width: 250px;*/;
+	}
+
+	.list {
+		margin-top: 54px;
+	}
+}
