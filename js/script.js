@@ -409,7 +409,7 @@ function Place(dataObj) {
 	this.placeId = dataObj.id;
 	this.locName = dataObj.locName;
 	this.latLng = dataObj.latLng;
-	this.FourSquare_id = dataObj.FourSquare_id
+	this.FourSquare_id = dataObj.FourSquare_id;
 	// Save a reference to the Places' map marker after you build the
 	// marker:
 	this.marker = null;
@@ -471,7 +471,7 @@ function getPlacesDetails(marker, infowindow) {
 		}
 		else {
 			console.log('not ok');
-		};
+		}
 	}); //end function (place status)
 	// adapted from https://developers.google.com/maps/documentation/javascript/examples/marker-animations?hl=de
 	
