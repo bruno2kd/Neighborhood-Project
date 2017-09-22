@@ -14,7 +14,7 @@
             <!-- Start wrapping the sidebar -->
             <div id="sidebar-wrapper">
                 <div>
-                    <div class="btn btn-default" id="toggleList" onclick="toggleSidebar()"><img src="images/menu-icon.png" height="30" width="30"></div>
+                    <div class="btn btn-default" id="toggleList" onclick="toggleSidebar()"><img src="images/menu-icon.png" alt="Menu Icon" height="30" width="30"></div>
                 </div>
                 <div class="list">
                     <div class="search">
@@ -35,10 +35,10 @@
                         <div id="FS-tips" data-bind="foreach: allFSTips">
                             <div class="user">
                                 <div id="user-pic"></div>
-                                <p id='first-name'><span data-bind="text: user.firstName"> </p>
-                                <p id='last-name'><span data-bind="text: user.lastName"/></span>:</p>
+                                <p id='first-name'><span data-bind="text: user.firstName"></span></p>
+                                <p id='last-name'><span data-bind="text: user.lastName"></span>:</p>
                             </div>
-                            <p id='tip-item' data-bind="text: text"></li>
+                            <p id='tip-item' data-bind="text: text">
                         </div>
                         <hr>
                         <p id='attribution'></p>
@@ -55,10 +55,10 @@
                 </div>
             </div>
             <!-- Scripts-->
-            <script src="js/script.js"></script>
-                  <!-- sweetAlert -->
-            <script src="js/sweetalert.min.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+            <script src="js/script.js"></script>
+            <!-- sweetAlert -->
+            <script src="js/sweetalert.min.js"></script>
             <!-- Knockout request -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
             <!-- Map request -->
