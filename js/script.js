@@ -68,11 +68,10 @@ var locationData = [{
 }];
 	
 var styles = function () {
-	var x = $.getJSON('js/styles.json', function(data) {
+	$.getJSON('js/styles.json', function(data) {
 		console.log(data);
 		return data;
 	});
-	return x
 };
 
 var koViewModel = function() {
