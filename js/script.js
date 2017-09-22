@@ -67,12 +67,12 @@ var locationData = [{
 	FourSquare_id: '4b7b2448f964a520e9532fe3'
 }];
 	
-var styles = function () {
+var styles = $(function () {
 	$.getJSON('js/styles.json', function(data) {
 		console.log(data);
 		return data;
 	});
-};
+});
 
 var koViewModel = function() {
 	var self = this;
