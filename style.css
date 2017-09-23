@@ -46,6 +46,7 @@ h2 {
 	visibility: visible;
 	cursor: pointer;
 	text-align: left;
+	background-color: transparent;
 }
 
 #toggleList:hover,
@@ -70,6 +71,9 @@ input {
 
 .list {
 	width: 100%;
+	background: rgba(255, 255, 255, 0.79);
+	padding-top: 5px;
+	margin-top: 0;
 }
 
 #list-view {
@@ -217,7 +221,6 @@ li:first-child {
 	height: auto;
 	margin-left: -250px;
 	overflow-y: auto;
-	background: rgba(255, 255, 255, 0.79);
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
@@ -264,6 +267,10 @@ li:first-child {
 	font-size: 0.2em;
 }
 
+#google-error {
+	margin:300px;
+}
+
 
 @media(max-width:768px) {
 	#wrapper {
@@ -281,9 +288,11 @@ li:first-child {
 	#toggleList {
 		position: fixed;
       /*width: 250px;*/;
+      	background-color: transparent;
 	}
 
 	.list {
 		margin-top: 54px;
+		background: rgba(255, 255, 255, 0.79);
 	}
 }

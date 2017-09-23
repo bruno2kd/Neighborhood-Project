@@ -6,6 +6,8 @@ var self = this;
 var map = self.googleMap;
 var allFSTips;
 var errorSVG = document.getElementById("errorDiv");
+
+// Ideally shold move to a different file
 var locationData = [{
 	locName: 'NB Steak', 
 	latLng: {
@@ -283,7 +285,7 @@ var styles = [
 	}
 	];
 
-var koViewModel = function() {
+var KoViewModel = function() {
 	var self = this;
 	listViewClick = function(marker, infowindow) {
 		var fsid = [];
@@ -335,7 +337,7 @@ var koViewModel = function() {
 			fsid = this.FourSquare_id;
 			self.allFSTitles(this.title + " Foursquare Tips");
 			self.allFSTips([]);
-			var completeFSUrl = "https://api.foursquare.com/v2/venues/" + fsid + "/tips?sort=recent&limit=2&oauth_token=OZQRN2EXMDGLYZ34JR33C5IRZTO54R3CEJWNUPKUY2EPFZYA&v=20170921";
+			var completeFSUrl = "https://api.foursquare.com/v2/venues/" + fsid + "/tips?sort=recent&limit=5&oauth_token=OZQRN2EXMDGLYZ34JR33C5IRZTO54R3CEJWNUPKUY2EPFZYA&v=20170921";
 			$.ajax({
 				url: completeFSUrl,
 				dataType: "jsonp",
@@ -344,15 +346,12 @@ var koViewModel = function() {
 					var articleList = data.response.tips.items;
 					articleList.forEach(function(article) {
 						self.allFSTips.push(article);
-						document.getElementById("user-pic").innerHTML = ("<img src='"+article.user.photo.prefix+"50x50"+article.user.photo.suffix+"'>");
 					});
 				}, //end success function
 				error: function(response) {
 					console.log("API didn't load");
-					swal({
-						title: "Error",
-						text: "FourSquare didn't load"
-					});
+					alert("FourSquare didn't load");
+
 				}
 			}); //end AJAX call
 		}); //end place.marker.addListener
@@ -403,6 +402,28 @@ var koViewModel = function() {
 		self.FSArticles.push(article);
 	});
 	self.allFSTitles = ko.observableArray();
+
+	/*
+	function toggleSidebar() {
+		var x = document.getElementById('sidebar-wrapper');
+		if(x.style.visibility === 'hidden') {
+			x.style.visibility = 'visible';
+			 
+		} else {
+			x.style.visibility = 'hidden';
+			 
+		}
+	}*/
+
+	self.showSB = ko.observable(true);
+	self.toggleSidebar = function() {
+		self.showSB(!self.showSB());
+	};
+
+	self.refresh = function() {
+		location.reload();
+	}
+
 }; //end koViewModel
 
 function Place(dataObj) {
@@ -425,12 +446,17 @@ var initMap = function() {
 	// as per https://discussions.udacity.com/t/async-google-map-broke-my-app/42765/8
 	// and https://discussions.udacity.com/t/handling-google-maps-in-async-and-fallback/34282
 	var googleMap = map;
-	ko.applyBindings(new koViewModel(googleMap, locationData));
+	ko.applyBindings(new KoViewModel(googleMap, locationData));
 };
+
 var googleError = function(onerror) {
 	//  Mozilla recommendes you not use innerHTML when inserting plain text; instead, use node.textContent. This doesn't interpret the passed content as HTML, but instead inserts it as raw text.
 	//https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
-	errorSVG.innerHTML = "<img src='https://png.icons8.com/google-maps/color/1600' alt='Map failed to load'/>";
+	errorSVG.innerHTML = "<div id='google-error'><img height=300 width=300 src='https://png.icons8.com/google-maps/color/1600' alt='Map failed to load'/></div>";
+	$(document).ready(function(){
+	    alert("Google failed to load!");
+	});
+		
 };
 
 function getPlacesDetails(marker, infowindow) {
@@ -471,6 +497,8 @@ function getPlacesDetails(marker, infowindow) {
 		}
 		else {
 			console.log('not ok');
+			alert("Google Maps didn't load");
+
 		}
 	}); //end function (place status)
 	// adapted from https://developers.google.com/maps/documentation/javascript/examples/marker-animations?hl=de
@@ -486,18 +514,3 @@ function getPlacesDetails(marker, infowindow) {
 		}
 	}
 } //end getPlacesDetails
-
-function toggleSidebar() {
-	var x = document.getElementById('sidebar-wrapper');
-	if(x.style.visibility === 'hidden') {
-		x.style.visibility = 'visible';
-		 
-	} else {
-		x.style.visibility = 'hidden';
-		 
-	}
-}
-
-function refresh() {
-	location.reload();
-}

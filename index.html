@@ -12,13 +12,14 @@
     <body>
         <div id="wrapper">
             <!-- Start wrapping the sidebar -->
-            <div id="sidebar-wrapper">
-                <div>
-                    <div class="btn btn-default" id="toggleList" onclick="toggleSidebar()"><img src="images/menu-icon.png" alt="Menu Icon" height="30" width="30"></div>
-                </div>
-                <div class="list">
+            <aside id="sidebar-wrapper">
+                <nav>
+                    <div id="toggleList" data-bind="click: toggleSidebar"
+                    ><img src="images/menu-icon.png" alt="Menu Icon" height="30" width="30"></div>
+                </nav>
+                <div class="list" data-bind="visible: showSB">
                     <div class="search">
-                        <div id="circularTitle" onclick="refresh()">
+                        <div id="circularTitle" data-bind="click: refresh">
                             <h1 class="topTitle">Le Restaranté Map</h1>
                             <p class="title">Cheap Restauranté</p>
                         </div>
@@ -46,7 +47,7 @@
                 </div>
                 <!-- end "list" -->
                 
-            </div>
+            </aside>
             <!-- end sidebar-->
             <!--map container -->
             <div id="page_content_wrapper">
@@ -62,7 +63,7 @@
             <!-- Knockout request -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
             <!-- Map request -->
-            <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyBNT2upswFbNordLZka3EJr5jE9z7QtwQE&v=3&callback=initMap">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyBNT2upswFbNordLZka3EJr5jE9z7QtwQE&v=3&callback=initMap" onerror="googleError()">
             </script>
         </div>
     </body>
