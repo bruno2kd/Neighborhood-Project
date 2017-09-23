@@ -422,7 +422,7 @@ var KoViewModel = function() {
 
 	self.refresh = function() {
 		location.reload();
-	}
+	};
 
 }; //end koViewModel
 
